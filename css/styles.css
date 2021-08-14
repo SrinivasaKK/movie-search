@@ -1,0 +1,139 @@
+:root {
+  --white: #ffffff;
+  --blue: #337ab7;
+  --black: #000000;
+  --lightBlue: #2e6da4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+header {
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+header h1 {
+  margin: 0 20px;
+  color: #337ab7;
+}
+
+header a {
+  text-decoration: none;
+  margin: 0 auto;
+}
+
+#search {
+  width: 230px;
+  height: 30px;
+  border: 1px solid black;
+  outline: none;
+  border-radius: 20px;
+  padding-left: 15px;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.main {
+  width: 250px;
+  height: 100%;
+  margin: 19px 15px;
+}
+
+img {
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.text-center {
+  text-align: center;
+}
+.btn {
+  -webkit-appearance: button;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+
+.error {
+  color: red;
+}
+
+input[type="text"] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  background-color: #337ab7;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px auto;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #337ab7;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border: 1px solid white;
+  margin: 0 auto;
+}
+
+.card-form {
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+  transition: 0.3s;
+  margin: 20px auto;
+  border: 1px solid white;
+  width: 75%;
+  height: 100%;
+  text-align: center;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}

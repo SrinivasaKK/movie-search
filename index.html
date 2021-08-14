@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Info</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <header id="header">
+      <a href="#"><h1>Search Your favorite Movie</h1></a>
+    </header>
+    <div>
+      <form id="searchForm" class="card-form">
+        <input
+          type="text"
+          id="searchText"
+          placeholder="Enter a movie name"
+          class="search"
+        />
+
+        <input type="submit" value="Submit" onclick="searchMovie()" />
+      </form>
+    </div>
+    <main id="main"></main>
+  </body>
+</html>
