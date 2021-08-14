@@ -81,7 +81,13 @@ function movieSelected(id, index){
   fetch(url).then(res => res.json())
     .then((response)=>{
     sessionStorage.setItem(`${sessionStorageKey}_${id}`,JSON.stringify(response));
-    content.innerHTML = JSON.stringify(response)
+    content.innerHTML = `<ul>
+      <li><b>Released Year:</b> ${response.Released}</li>
+       <li><b>Genre:</b> ${response.Genre}</li>
+        <li><b>Director:</b> ${response.Director}</li>
+         <li><b>BoxOffice:</b> ${response.BoxOffice}</li>
+          <li><b>Awards:</b> ${response.Awards}</li>
+      </ul>`
     })
  
 }
