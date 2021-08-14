@@ -147,3 +147,9 @@ input[type="submit"]:hover {
   overflow: hidden;
   background-color: var(--white);
 }
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px auto;
+}

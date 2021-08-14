@@ -61,7 +61,18 @@ function movieSelected(id, index){
    coll[index].classList.toggle('active')
  
    if(movieDetails) {
-     content.innerHTML = movieDetails
+     // parse json
+     console.log(movieDetails)
+    const movieDetailsJson = JSON.parse(movieDetails)
+     content.innerHTML = `
+     <ul>
+      <li><b>Released Year:</b> ${movieDetailsJson.Released}</li>
+       <li><b>Genre:</b> ${movieDetailsJson.Genre}</li>
+        <li><b>Director:</b> ${movieDetailsJson.Director}</li>
+         <li><b>BoxOffice:</b> ${movieDetailsJson.BoxOffice}</li>
+          <li><b>Awards:</b> ${movieDetailsJson.Awards}</li>
+      </ul>
+     `
      return;
    }
 
