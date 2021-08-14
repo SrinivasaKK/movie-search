@@ -1,4 +1,4 @@
-const API_URL = 'http://www.omdbapi.com/?apikey=4d11b698&type=movie';
+const API_URL = 'https://www.omdbapi.com/?apikey=4d11b698&type=movie';
 const movieDOM = document.getElementById('main')
 const sessionStorageKey = 'movieID'
 const showDetailsButtonText = 'Show Details'
