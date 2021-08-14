@@ -87,7 +87,8 @@ function movieSelected(id, index){
 }
 
 
-  function searchMovie() {
+  function searchMovie(e) {
+    e.preventDefault();
     const form = document.getElementById("searchForm");
     const elements = document.getElementById("searchForm").elements;
     const obj ={};
