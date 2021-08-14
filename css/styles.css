@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Style+Script&display=swap");
+
 :root {
   --white: #ffffff;
   --blue: #337ab7;
@@ -5,41 +7,38 @@
   --lightBlue: #2e6da4;
   --red: #ff0000;
   --gray: #ccc;
-}
-
-* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  font-family: "Style Script", cursive;
 }
+
 header {
   height: 50px;
   display: flex;
   align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: var(--blue);
 }
 
-header h1 {
+header h2 {
   margin: 0 20px;
-  color: var(--blue);
+  color: var(--white);
+}
+
+h4 {
+  margin: 10px;
 }
 
 header a {
   text-decoration: none;
   margin: 0 auto;
-}
-
-#search {
-  width: 230px;
-  height: 30px;
-  border: 1px solid var(--black);
-  outline: none;
-  border-radius: 20px;
-  padding-left: 15px;
 }
 
 main {
@@ -50,8 +49,7 @@ main {
 }
 .main {
   width: 250px;
-  height: 100%;
-  margin: 19px 15px;
+  margin: 10px 15px;
 }
 
 img {
@@ -62,31 +60,6 @@ img {
 
 .text-center {
   text-align: center;
-}
-.btn {
-  -webkit-appearance: button;
-  display: inline-block;
-  margin-bottom: 0;
-  font-weight: 400;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-  cursor: pointer;
-  background-image: none;
-  border: 1px solid transparent;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857143;
-  border-radius: 4px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  color: var(--white);
-  background-color: var(--blue);
-  border-color: var(--lightBlue);
 }
 
 .error {
@@ -150,4 +123,27 @@ input[type="submit"]:hover {
 #searchdiv {
   background: var(--white);
   z-index: 9999;
+}
+
+.toggle-content {
+  background-color: var(--blue);
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+
+  outline: none;
+  font-size: 15px;
+}
+
+.toggle-content:hover {
+  background-color: var(--blue);
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: var(--white);
 }
