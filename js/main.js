@@ -1,25 +1,23 @@
-const API_URL = 'https://www.omdbapi.com/?apikey=4d11b698&type=movie';
-const movieDOM = document.getElementById('main')
-const sessionStorageKey = 'movieID'
-const showDetailsButtonText = 'Show Details'
-const hideDetailsButtonText = 'Hide Details'
+const movieDOM = document.getElementById('main');
+
+
 function showMovies(url){
    let output = '';
     fetch(url).then(res => res.json())
     .then((response)=>{
       console.log(response)
-      if(response.Response=='True'){
+      if(response.Response==STATIC_TEXTS.SUCCESS){
       let movies = response.Search;
-     
       movies.forEach((movie, index) => {
+        const moviePoster = `${movie.Poster}` == 'N/A'?'./default.jpg':`${movie.Poster}`
         output += `
           <div class='main'>
             <div class="card text-center" >
-              <img src="${movie.Poster}" alt="poster">
+              <img src="${moviePoster}" alt="poster">
               <div>
               <h4><b>${movie.Title}</b></h4>
-              <button id = "button_${index}" onclick="movieSelected('${movie.imdbID}', '${index}')"  class="toggle-content">${showDetailsButtonText}</button>
-              <div class="content" id = "content_${index}" ></div>
+              <button id = "button_${index}" onclick="movieSelected('${movie.imdbID}', '${index}')"  class="toggle-content">${STATIC_TEXTS.showDetailsButtonText}</button>
+              <div class="content" id = "content_${index}" > ${STATIC_TEXTS.LOADING}</div>
               </div>
             </div>
           </div>
@@ -30,7 +28,7 @@ function showMovies(url){
     else {
       output = `<div>
             <div class="text-center">
-              <h5 class='error'>${response.Error} Please search again with specific movie name</h5>
+              <h5 class='error'>${response.Error} ${STATIC_TEXTS.ERROR_MESSAGE}</h5>
             </div>
           </div>`
      
@@ -46,16 +44,16 @@ function showMovies(url){
 function movieSelected(id, index){
 
   // check if it is already cached 
- const movieDetails = sessionStorage.getItem(`${sessionStorageKey}_${id}`);
+ const movieDetails = sessionStorage.getItem(`${STATIC_TEXTS.sessionStorageKey}_${id}`);
  const content = document.getElementById(`content_${index}`);
   const button  = document.getElementById(`button_${index}`);
   
    if (content.style.display === "block") {
       content.style.display = "none";
-      button.innerHTML = showDetailsButtonText
+      button.innerHTML = STATIC_TEXTS.showDetailsButtonText
     } else {
       content.style.display = "block";
-       button.innerHTML = hideDetailsButtonText
+       button.innerHTML = STATIC_TEXTS.hideDetailsButtonText
     }
    const coll = document.getElementsByClassName("toggle-content");
    coll[index].classList.toggle('active')
@@ -80,7 +78,7 @@ function movieSelected(id, index){
   const url = `${API_URL}&i=${id}`
   fetch(url).then(res => res.json())
     .then((response)=>{
-    sessionStorage.setItem(`${sessionStorageKey}_${id}`,JSON.stringify(response));
+    sessionStorage.setItem(`${STATIC_TEXTS.sessionStorageKey}_${id}`,JSON.stringify(response));
     content.innerHTML = `<ul>
       <li><b>Released Year:</b> ${response.Released}</li>
        <li><b>Genre:</b> ${response.Genre}</li>
