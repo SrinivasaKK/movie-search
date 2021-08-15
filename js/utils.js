@@ -1,14 +1,15 @@
-window.onscroll = () =>{stickyHeader()};
+window.onscroll = () => {
+  stickyHeader();
+};
 function stickyHeader() {
-const header = document.getElementById("searchdiv");
-const sticky = header.offsetTop;
+  const header = document.getElementById("searchdiv");
+  const sticky = header.offsetTop;
   if (window.pageYOffset > sticky) {
     header.classList.add("sticky");
   } else {
     header.classList.remove("sticky");
   }
 }
-
 
 function returnDetailsDOM(movie) {
   return `<ul>
@@ -17,12 +18,12 @@ function returnDetailsDOM(movie) {
         <li><b>Director:</b> ${movie.Director}</li>
          <li><b>BoxOffice:</b> ${movie.BoxOffice}</li>
           <li><b>Awards:</b> ${movie.Awards}</li>
-      </ul>`
+      </ul>`;
 }
 
-
 function returnMovieCardsDOM(movie, index) {
-  const moviePoster = `${movie.Poster}` == 'N/A'?'./default.jpg':`${movie.Poster}`
+  const moviePoster =
+    `${movie.Poster}` == "N/A" ? "./default.jpg" : `${movie.Poster}`;
   return `
           <div class='main'>
             <div class="card text-center" >
@@ -37,11 +38,10 @@ function returnMovieCardsDOM(movie, index) {
         `;
 }
 
-
 function returnErrorDom(response) {
   return `<div>
             <div class="text-center">
               <h5 class='error'>${response.Error} ${STATIC_TEXTS.ERROR_MESSAGE}</h5>
             </div>
-          </div>`
+          </div>`;
 }
