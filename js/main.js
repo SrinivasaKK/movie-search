@@ -81,3 +81,29 @@ function searchMovie(e) {
   }
   form.reset();
 }
+
+// additional things that could be done
+// debouncing technique
+// let debounceTime = delayApiCall(apiFunction, delay)
+
+// function delayApiCall(fn, delay) {
+
+// // store the context
+
+//  let timer = null;
+
+//  return () => {
+//  let context = this;
+
+//  // supply additional arguments if any
+//  let args = areguments;
+//  // clear old timer if any to avoid multiple calls on stack
+//  clearTimeout(timer);
+
+//  timer = setTimeout(()=> {
+//  fn.apply(context, args)
+
+//  }, delay)
+//  }
+
+//}
