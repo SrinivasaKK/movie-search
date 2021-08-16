@@ -6,7 +6,6 @@ function showMovies(url) {
   fetch(url)
     .then((res) => res.json())
     .then((response) => {
-      console.log(response);
       if (response.Response == STATIC_TEXTS.SUCCESS) {
         let movies = response.Search;
         movies.forEach((movie, index) => {
@@ -19,7 +18,7 @@ function showMovies(url) {
     })
 
     .catch((err) => {
-      console.log(err);
+      throw new error(err);
     });
 }
 
