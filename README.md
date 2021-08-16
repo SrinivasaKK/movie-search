@@ -13,3 +13,4 @@ Run index.html on any server
 3. Simple and clean design
 4. modularized code
 5. Launch fast and iterate (Followed Adyen's formula)
+6. Made use of Session storage to avoid redundant api calls to fetch same movie details
